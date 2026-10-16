@@ -184,3 +184,9 @@
   background: transparent !important;
   padding: 5px 10px;
 }
+
+/* 게시글의 설명과 수정일 숨기기 */
+article.panel > .intro,
+article.panel > .meta {
+  display: none;
+}
