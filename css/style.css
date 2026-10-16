@@ -303,3 +303,23 @@ body:has(#content-page:not([hidden]) article.panel)
   position: relative;
   z-index: 11;
 }
+
+/* 홈 화면에서만 ASCII 별 크기와 위치 변경 */
+body:has(#home-page:not([hidden]))
+#ascii-star-decoration {
+  position: fixed;
+  top: 80px;
+  left: 30px;
+  right: auto;
+  bottom: auto;
+
+  font-size: 2px;
+  line-height: 1.15;
+  opacity: 0.7;
+}
+
+/* 필기 화면에서만 ASCII 별을 연한 하늘색으로 */
+body:has(#content-page:not([hidden]) article.panel)
+#ascii-star-decoration {
+  color: #A8DFFF !important;
+}
