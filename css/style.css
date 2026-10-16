@@ -250,3 +250,25 @@ body:has(#content-page:not([hidden]) article.panel)
   z-index: 1;
 }
 /* END STUDYARCHIVE ASCII STAR */
+
+/* 별 ASCII 아트: 뒤쪽 */
+#ascii-star-decoration {
+  z-index: 0 !important;
+}
+
+/* 사람 ASCII 아트: 앞쪽 */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-ascii {
+  position: absolute;
+  z-index: 2 !important;
+}
+
+/* 별이 사람 뒤에 보이도록 홈 화면 배경 설정 */
+#home-page {
+  position: relative;
+  isolation: isolate;
+}
