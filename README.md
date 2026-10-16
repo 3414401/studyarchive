@@ -14,6 +14,7 @@
 - **글 추가**: 같은 과목의 `<article class="archive-post">...</article>` 전체를 복사한 뒤 `data-slug`를 중복되지 않게 바꾸기
 - **과목 추가**: `<section class="archive-category">...</section>` 전체를 복사한 뒤 `data-id`를 중복되지 않게 바꾸기
 
+```
 <p>이 문장은 기본적으로 흰색이야.</p>
 
 <p>
@@ -21,7 +22,7 @@
   <span class="yellow">노란색 강조</span>,
   <span class="pink">분홍색 강조</span>
 </p>
-
+```
 ### HTML 본문 예시
 
 ```html
