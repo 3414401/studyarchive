@@ -13,16 +13,15 @@
       "format": "html"
     },
     {
-      "slug": "inverse",
-      "title": "Inverse Matrix",
-      "date": "2026-10-14",
-      "tags": [
-        "inverse",
-        "역행렬"
-      ],
-      "summary": "가역행렬과 단위행렬",
-      "file": "01-3 linear combinatoin.html",
-      "format": "html"
+     {
+  "slug": "linear-combination",
+  "title": "01-3 Linear Combination",
+  "date": "2026-10-14",
+  "tags": ["linear algebra", "선형결합"],
+  "summary": "선형결합",
+  "file": "01-3 linear combinatoin.html",
+  "format": "html"
+}
     },
     {
       "slug": "markdown-example",
