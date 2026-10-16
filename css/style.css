@@ -53,3 +53,28 @@
 .article-body .note-box > :last-child {
   margin-bottom: 0;
 }
+
+/* 필기용 표 */
+.article-body .note-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.article-body .note-table th,
+.article-body .note-table td {
+  border: 1px solid #35465a;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.article-body .note-table th {
+  background: #14283a;
+  color: #8acaff;
+}
+
+.article-body .note-table td {
+  background: #101820;
+  color: #c4e3fa;
+}
