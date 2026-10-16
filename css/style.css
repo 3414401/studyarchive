@@ -148,3 +148,22 @@
 .article-body .note-table {
   font-size: 13px;
 }
+
+/* 필기 제목 크기 조절 */
+.article-body h1 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 20px 0 10px;
+}
+
+.article-body h2 {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 16px 0 8px;
+}
+
+.article-body h3 {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 12px 0 6px;
+}
