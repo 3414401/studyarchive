@@ -2,6 +2,13 @@
 
 이 사이트는 **GitHub Pages에서 바로 동작하는 정적 사이트**입니다. 서버, 빌드, 별도 설치가 필요 없습니다.
 
+앞으로 필기 추가하는 방법
+1. GitHub에서 notes/linear-algebra/ 폴더를 연다.
+2. Add file → Create new file을 클릭한다.
+3. 예를 들어 01-4 Vector Equations.html이라는 파일을 만들고 내용을 작성한다.
+4. Commit changes를 누른다.
+그러면 GitHub Actions가 실행되어 필기 목록을 자동 갱신하도록 설정된 거야. manifest.json을 직접 수정할 필요 없어.
+
 ## 가장 중요한 파일: `index.html`
 
 `index.html`의 아래쪽에서 `id="archive-content"`를 검색하세요.
