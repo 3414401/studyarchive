@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "slug": "welcome",
+      "title": "About This Archive",
+      "date": "2026-10-14",
+      "tags": [
+        "welcome"
+      ],
+      "summary": "이 공간에 대하여",
+      "file": "01-about-this-archive.html",
+      "format": "html"
+    }
+  ]
+}

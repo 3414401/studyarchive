@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "slug": "linked-list",
+      "title": "Linked List",
+      "date": "2026-10-14",
+      "tags": [
+        "linked list",
+        "연결리스트"
+      ],
+      "summary": "노드와 포인터로 구성하는 연결 구조",
+      "file": "01-linked-list.html",
+      "format": "html"
+    },
+    {
+      "slug": "stack-queue",
+      "title": "Stack & Queue",
+      "date": "2026-10-14",
+      "tags": [
+        "stack",
+        "queue"
+      ],
+      "summary": "LIFO와 FIFO",
+      "file": "02-stack-queue.html",
+      "format": "html"
+    }
+  ]
+}

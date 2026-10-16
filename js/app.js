@@ -39,24 +39,27 @@ function renderMarkdown(source) {
 
 // 과목명과 글 내용은 index.html 안의 #archive-content에서 읽어 옵니다.
 const data = Array.from(document.querySelectorAll('#archive-content .archive-category'), section => ({
-  id: section.dataset.id,
-  name: section.dataset.name,
-  subtitle: section.dataset.subtitle || '',
-  posts: Array.from(section.querySelectorAll(':scope > .archive-post'), article => {
-    const template = article.querySelector('template');
-    return {
-      slug: article.dataset.slug,
-      title: article.dataset.title,
-      date: article.dataset.date || '',
-      summary: article.dataset.summary || '',
-      tags: (article.dataset.tags || '').split(',').map(s => s.trim()).filter(Boolean),
-      body: template?.dataset.format === 'markdown'
-        ? renderMarkdown(template.content.textContent)
-        : (template?.innerHTML || '')
-    };
-  })
+  id: section.dataset.id, name: section.dataset.name,
+  subtitle: section.dataset.subtitle || '', posts: []
 }));
-const all = data.flatMap(cat => cat.posts.map(post => ({cat,post})));
+let all = [];
+async function loadManifests() {
+  await Promise.all(data.map(async cat => {
+    const response = await fetch('notes/' + cat.id + '/manifest.json');
+    if (!response.ok) throw Error('Cannot load manifest: ' + cat.id);
+    const manifest = await response.json();
+    cat.posts = manifest.posts.map(post => ({...post, tags: post.tags || []}));
+  }));
+  all = data.flatMap(cat => cat.posts.map(post => ({cat, post})));
+}
+async function loadPost(cat, post) {
+  if (post.body !== undefined) return post.body;
+  const response = await fetch('notes/' + cat.id + '/' + encodeURIComponent(post.file));
+  if (!response.ok) throw Error('Cannot load note: ' + post.file);
+  const source = await response.text();
+  post.body = post.format === 'markdown' ? renderMarkdown(source) : source;
+  return post.body;
+}
 const esc = s => String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const url = (cat,post) => '#/post/'+encodeURIComponent(cat.id)+'/'+encodeURIComponent(post.slug);
 const path = () => decodeURIComponent(location.hash.replace(/^#\/?/,'')).split('/').filter(Boolean);
@@ -71,13 +74,13 @@ function renderNav() {
       `<a href="#/category/${c.id}" data-cat="${c.id}">[ ${String(i+1).padStart(2,'0')} ] ${esc(c.name)}</a>`
     ).join('');
 }
-function render(){const [type,id,slug] = path();currentCat=data.find(c=>c.id===id)||null;const showHome=!type;home.hidden=!showHome;page.hidden=showHome;
+async function render(){const requestedHash=location.hash;const [type,id,slug] = path();currentCat=data.find(c=>c.id===id)||null;const showHome=!type;home.hidden=!showHome;page.hidden=showHome;
 nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.dataset.cat===id));
 $('prompt').textContent='C:\\StudyArchive'+(currentCat?'\\'+currentCat.id:'')+'>';
 if(showHome){drawStar();return;}
 let html='';
 if(type==='category' && currentCat){html=`<section class="panel"><div class="crumb">C:\\StudyArchive\\${esc(currentCat.id)}&gt; ls</div><h1>${esc(currentCat.name)}</h1><p class="intro">${esc(currentCat.subtitle)} / ${currentCat.posts.length} FILE(S) FOUND</p><div class="file-list">${currentCat.posts.map(p=>`<a href="${url(currentCat,p)}"><span>${esc(p.title)}.html</span><small>${esc(p.summary)}</small></a>`).join('')}</div>${link('← BACK TO HOME','#/','back')}</section>`;}
-else if(type==='post' && currentCat){const p=currentCat.posts.find(x=>x.slug===slug);if(!p){html=notFound();}else{html=`<article class="panel"><div class="crumb">C:\\StudyArchive\\${esc(currentCat.id)}&gt; cat ${esc(p.slug)}.html</div><h1>${esc(p.title)}</h1><p class="intro">${esc(p.summary)}</p><div class="meta">UPDATED ${esc(p.date)} / ${esc(currentCat.name)}</div><div class="article-body">${p.body}</div><div>${p.tags.map(t=>`<span class="tag">#${esc(t)}</span>`).join('')}</div>${link('← '+currentCat.name,'#/category/'+currentCat.id,'back')}</article>`;}}
+else if(type==='post' && currentCat){const p=currentCat.posts.find(x=>x.slug===slug);if(!p){html=notFound();}else{let body;try{body=await loadPost(currentCat,p);}catch(e){body=`<p>필기 파일을 불러오지 못했습니다: ${esc(e.message)}</p>`;}if(location.hash!==requestedHash)return;html=`<article class="panel"><div class="crumb">C:\\StudyArchive\\${esc(currentCat.id)}&gt; cat ${esc(p.slug)}.html</div><h1>${esc(p.title)}</h1><p class="intro">${esc(p.summary)}</p><div class="meta">UPDATED ${esc(p.date)} / ${esc(currentCat.name)}</div><div class="article-body">${body}</div><div>${p.tags.map(t=>`<span class="tag">#${esc(t)}</span>`).join('')}</div>${link('← '+currentCat.name,'#/category/'+currentCat.id,'back')}</article>`;}}
 else if(type==='notes'||type==='search'){const q=type==='search'?(new URLSearchParams(location.hash.split('?')[1]||'')).get('q')||'':'';const matches=search(q);html=`<section class="panel"><div class="crumb">C:\\StudyArchive&gt; ${type==='search'?'search '+esc(q):'ls /all'}</div><h1>${type==='search'?'SEARCH RESULTS':'ALL NOTES'}</h1><p class="intro">${matches.length} FILE(S) FOUND</p>${matches.length?`<div class="file-list">${matches.map(x=>`<a href="${url(x.cat,x.post)}"><span>${esc(x.post.title)}</span><small>${esc(x.cat.name)} / ${esc(x.post.summary)}</small></a>`).join('')}</div>`:'<p class="empty">No matching notes.</p>'}${link('← HOME','#/','back')}</section>`;}
 else if(type==='random'){const x=all[Math.floor(Math.random()*all.length)];open(url(x.cat,x.post));return;}
 else if(type==='about'){html=`<section class="panel"><div class="crumb">C:\\StudyArchive&gt; about</div><h1>ABOUT THIS ARCHIVE</h1><p>손글씨와 코드, 수학과 아이디어를 모으는 개인 공부 기록 공간입니다.</p><p>상단 터미널에서 <code>help</code>를 입력하거나 카테고리를 클릭해 이동할 수 있습니다.</p>${link('← HOME','#/','back')}</section>`;}
@@ -114,5 +117,8 @@ $('terminal-input').addEventListener('keydown',e=>{if(e.key==='ArrowUp'){e.preve
 $('toggle-terminal').addEventListener('click',()=>{output.hidden=!output.hidden;$('toggle-terminal').textContent=output.hidden?'[ + ]':'[ − ]';$('toggle-terminal').setAttribute('aria-expanded',String(!output.hidden));});
 function drawStar(){const canvas=$('binary-star');if(home.hidden)return;const rect=canvas.getBoundingClientRect();if(!rect.width)return;const w=rect.width,h=rect.height,dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0);const cx=w*.5,cy=h*.55,R=Math.min(w*.36,h*.45),r=R*.43;const points=[];for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,rad=i%2?r:R;points.push([cx+Math.cos(a)*rad,cy+Math.sin(a)*rad]);}ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.save();ctx.clip();const size=Math.max(9,Math.min(13,w/58));ctx.font=size+'px monospace';ctx.fillStyle='#329fff';for(let row=0,y=cy-R; y<cy+R;row++,y+=size*1.18){for(let col=0,x=cx-R;x<cx+R;col++,x+=size*.65){const hash=(row*97+col*31+row*col*7)%17;ctx.globalAlpha=.45+(hash/17)*.55;ctx.fillText(hash%2?'1':'0',x,y);}}ctx.restore();ctx.strokeStyle='#278cda';ctx.lineWidth=1;ctx.setLineDash([2,4]);for(let k=0;k<3;k++){ctx.save();ctx.translate(cx,cy);ctx.rotate(-.45+k*.46);ctx.beginPath();ctx.ellipse(0,0,R*1.35,R*.43,0,0,Math.PI*2);ctx.stroke();ctx.restore();}ctx.setLineDash([]);for(let i=0;i<55;i++){const x=(i*137.23+23)%w,y=(i*79.57+17)%h;if(Math.hypot(x-cx,y-cy)<R*.25)continue;ctx.globalAlpha=.3+(i%4)*.15;ctx.fillStyle='#329fff';ctx.fillRect(x,y,i%8===0?2:1,i%8===0?2:1);}ctx.globalAlpha=1;}
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(drawStar,120)});addEventListener('hashchange',render);
-renderNav();showSuggestions();render();
+loadManifests().then(() => { renderNav(); showSuggestions(); render(); }).catch(e => {
+  page.hidden = false; home.hidden = true;
+  page.innerHTML = '<section class="panel"><h1>NOTES LOAD ERROR</h1><p>' + esc(e.message) + '</p></section>';
+});
 })();

@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "slug": "matrix",
+      "title": "01 Matrix Basics",
+      "date": "2026-10-14",
+      "tags": [
+        "matrix",
+        "행렬"
+      ],
+      "summary": "행렬과 선형변환의 기본 개념",
+      "file": "01-matrix-basics.html",
+      "format": "html"
+    },
+    {
+      "slug": "inverse",
+      "title": "Inverse Matrix",
+      "date": "2026-10-14",
+      "tags": [
+        "inverse",
+        "역행렬"
+      ],
+      "summary": "가역행렬과 단위행렬",
+      "file": "02-inverse-matrix.html",
+      "format": "html"
+    },
+    {
+      "slug": "markdown-example",
+      "title": "Markdown 필기 예시",
+      "date": "2026-10-14",
+      "tags": [
+        "markdown",
+        "필기"
+      ],
+      "summary": "Markdown과 HTML을 함께 활용하는 방법",
+      "file": "03-markdown-example.md",
+      "format": "markdown"
+    }
+  ]
+}

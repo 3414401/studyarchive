@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "slug": "git",
+      "title": "Git & GitHub",
+      "date": "2026-10-14",
+      "tags": [
+        "git",
+        "github"
+      ],
+      "summary": "Fork, Clone, Pull Request",
+      "file": "01-git-github.html",
+      "format": "html"
+    }
+  ]
+}

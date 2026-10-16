@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "slug": "logic",
+      "title": "Propositional Logic",
+      "date": "2026-10-14",
+      "tags": [
+        "logic",
+        "명제"
+      ],
+      "summary": "명제와 논리 연산",
+      "file": "01-propositional-logic.html",
+      "format": "html"
+    }
+  ]
+}

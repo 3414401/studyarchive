@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "slug": "classes",
+      "title": "Classes & self",
+      "date": "2026-10-14",
+      "tags": [
+        "python",
+        "class"
+      ],
+      "summary": "클래스, 인스턴스, self",
+      "file": "01-classes-self.html",
+      "format": "html"
+    },
+    {
+      "slug": "numpy",
+      "title": "NumPy Indexing",
+      "date": "2026-10-14",
+      "tags": [
+        "numpy",
+        "array"
+      ],
+      "summary": "배열 인덱싱과 슬라이싱",
+      "file": "02-numpy-indexing.html",
+      "format": "html"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "slug": "knn",
+      "title": "K-Nearest Neighbors",
+      "date": "2026-10-14",
+      "tags": [
+        "knn",
+        "machine learning"
+      ],
+      "summary": "K-최근접 이웃 알고리즘",
+      "file": "01-k-nearest-neighbors.html",
+      "format": "html"
+    }
+  ]
+}

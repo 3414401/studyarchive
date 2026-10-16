@@ -1,0 +1,55 @@
+<h2>1.1 선형연립방정식 Systems of Linear Equations</h2>
+        <p>1차 x가 상수와 결합된 형태</p>
+        <div class="note-box">
+  <p>a1x1 + a2x2 + a3x3 + ... + = b</p>
+</div>
+<p><span class="yellow">최종 목표: EXISTENCE(존재성), UNIQUENESS(유일성) 판별</span></p>
+        <div class="note-box">
+          <p>solution(해) 개수: 0, 1, infinity 셋 중 하나</p>
+          <p>- 1, infinity: <span class="yellow">consistent(유효)</span></p>
+          <p>- 0 : <span class="yellow">Inconsistent(불능)</span></p>
+</div>
+        <table class="note-table">
+  <thead>
+    <tr>
+      <th>변수 개수</th>
+      <th>전체 공간</th>
+      <th>Row 한개</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2개</td>
+      <td>ℝ<sup>2</sup></td>
+      <td>1차원 직선</td>
+    </tr>
+   <tr>
+      <td>3개</td>
+      <td>ℝ<sup>3</sup></td>
+      <td>2차원 평면</td>
+    </tr>
+     <tr>
+      <td>6개</td>
+      <td>ℝ<sup>6</sup></td>
+      <td>5차원 초평면</td>
+    </tr>
+  </tbody>
+</table>
+<p>📖용어: <span class="yellow">Augmented Matrix(첨가 행렬)</span> / Coefficient Matrix(계수 행렬) / 행 축약(-> 사다리꼴 --> 축약된 사다리꼴) </p>
+
+        <P>행 축약의 3단계: ①<b>대체(곱해서 더하기)</b> ②<b>교환(위치 바꾸기)</b> ③<b>스케일링(행 단위로 상수 곱하기)</b> </P>
+ <div class="note-box">
+          <p>최종 목표: EXISTENCE(존재성), UNIQUENESS(유일성) 판별</p>
+          <p>Ax=b의 EXISTENCE(존재성): 마지막 행 보기</p>
+   <p>⬇️*해가 존재한다면*⬇️</p>
+          <p>UNIQUENESS(유일성): 비자명한 해 체크 <-> 자유변수 체크 <-> Ax=0의 자유변수 체크 </p>
+ </div>
+
+<P>📖용어 <span class="yellow">basic variable</span>: 기본 변수, <span class="yellow">free variable</span>: 자유 변수</P>
+  <p>📖용어 <span class="yellow">REF</span>는 여러개 --> 피벗 위아래 다 0 --> RREF </p>
+  <p>📖용어 <span class="yellow">매개변수적 표현 (Parametric Descriptions)</span>: 모든 basic 변수들을 free variable의 선형결합으로 표현</p>
+
+  <p>🔖Theorem2: 가장 오른쪽 열이 피벗 열이 아니라면, 해가 존재하며 consistent함.</p>
+        <h2>02 / 열벡터 관점</h2>
+        <p>Ax는 A의 열벡터를 x의 성분으로 선형결합한 결과입니다.</p>
+        <div class="note-placeholder">✎ FLEXCIL NOTE AREA<br><small>images/notes/에 내 필기를 넣어 보세요.</small></div>
