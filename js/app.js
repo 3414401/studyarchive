@@ -44,14 +44,43 @@ const data = Array.from(document.querySelectorAll('#archive-content .archive-cat
 }));
 let all = [];
 async function loadManifests() {
+  let tree = null;
+  try {
+    const response = await fetch('https://api.github.com/repos/3414401/studyarchive/git/trees/main?recursive=1', {cache:'no-store'});
+    if (!response.ok) throw Error('GitHub API unavailable');
+    const result = await response.json();
+    if (result.truncated || !Array.isArray(result.tree)) throw Error('Incomplete GitHub tree');
+    tree = result.tree.filter(x => x.type === 'blob').map(x => x.path);
+  } catch (e) { console.warn('Using saved note indexes', e); }
   await Promise.all(data.map(async cat => {
-    const response = await fetch('notes/' + cat.id + '/manifest.json');
-    if (!response.ok) throw Error('Cannot load manifest: ' + cat.id);
-    const manifest = await response.json();
-    cat.posts = manifest.posts.map(post => ({...post, tags: post.tags || []}));
+    let saved = [];
+    try {
+      const response = await fetch('notes/' + cat.id + '/manifest.json', {cache:'no-store'});
+      if (response.ok) saved = (await response.json()).posts || [];
+    } catch (e) { console.warn('Invalid manifest', cat.id, e); }
+    if (!tree) {
+      cat.posts = saved.map(post => ({...post, tags: post.tags || []}));
+      return;
+    }
+    const prefix = 'notes/' + cat.id + '/';
+    const files = tree.filter(path => path.startsWith(prefix) && !path.slice(prefix.length).includes('/') && /\.(html|md)$/i.test(path))
+      .map(path => path.slice(prefix.length)).sort((a,b) => a.localeCompare(b, undefined, {numeric:true}));
+    const used = new Set();
+    cat.posts = files.map(file => {
+      const old = saved.find(p => p.file === file);
+      const stem = file.replace(/\.(html|md)$/i, '');
+      const base = stem.toLowerCase().replace(/[^a-z0-9가-힣]+/g,'-').replace(/^-|-$/g,'') || 'note';
+      let slug = old && old.slug && !used.has(old.slug) ? old.slug : base;
+      for(let i=2;used.has(slug);i++) slug=base+'-'+i;
+      used.add(slug);
+      return {slug, title:old?.title || stem, date:old?.date || '',
+        tags:old?.tags || [], summary:old?.summary || '', file,
+        format:/\.md$/i.test(file)?'markdown':'html'};
+    });
   }));
   all = data.flatMap(cat => cat.posts.map(post => ({cat, post})));
 }
+
 async function loadPost(cat, post) {
   if (post.body !== undefined) return post.body;
   const response = await fetch('notes/' + cat.id + '/' + encodeURIComponent(post.file));

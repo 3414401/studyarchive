@@ -1,0 +1,32 @@
+name: Auto update notes index
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notes/**'
+      - 'scripts/build_notes.py'
+      - '.github/workflows/auto-notes.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate manifests
+        run: python scripts/build_notes.py
+      - name: Commit updated manifests
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add notes
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update note indexes"
+            git push
+          fi
