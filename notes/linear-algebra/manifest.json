@@ -1,21 +1,21 @@
 {
   "posts": [
     {
+      "slug": "01-1-matrix-basics",
+      "title": "01-1 matrix basics",
+      "date": "2026-10-16",
+      "tags": [],
+      "summary": "",
+      "file": "01-1 matrix basics.html",
+      "format": "html"
+    },
+    {
       "slug": "linear-combination",
       "title": "01-3 Linear Combination",
       "date": "2026-10-16",
       "tags": [],
       "summary": "선형결합",
       "file": "01-3 linear combinatoin.html",
-      "format": "html"
-    },
-    {
-      "slug": "matrix",
-      "title": "01 Matrix Basics",
-      "date": "2026-10-16",
-      "tags": [],
-      "summary": "행렬과 선형변환의 기본 개념",
-      "file": "01-matrix-basics.html",
       "format": "html"
     },
     {
