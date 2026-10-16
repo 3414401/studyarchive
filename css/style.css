@@ -231,4 +231,22 @@ body:has(#content-page:not([hidden]) article.panel) #ascii-star-decoration {
   #ascii-star-decoration { font-size: 3px; right: 1vw; bottom: 2vh; opacity: .40; }
   body:has(#content-page:not([hidden]) article.panel) #ascii-star-decoration { opacity: .10; }
 }
+
+/* 필기 화면: ASCII 별을 글자 뒤에 희미하게 표시 */
+body:has(#content-page:not([hidden]) article.panel)
+#ascii-star-decoration {
+  display: block;
+  position: fixed;
+  right: 3vw;
+  bottom: 4vh;
+  z-index: 0;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* 필기 본문을 별보다 앞에 표시 */
+#content-page article.panel {
+  position: relative;
+  z-index: 1;
+}
 /* END STUDYARCHIVE ASCII STAR */
