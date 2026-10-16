@@ -256,6 +256,7 @@ body:has(#content-page:not([hidden]) article.panel)
   z-index: 0 !important;
 }
 
+
 /* 사람 ASCII 아트: 앞쪽 */
 .hero {
   position: relative;
@@ -271,4 +272,34 @@ body:has(#content-page:not([hidden]) article.panel)
 #home-page {
   position: relative;
   isolation: isolate;
+}
+
+
+/* 필기 화면에서 별을 PNG와 글자 뒤에 표시 */
+body:has(#content-page:not([hidden]) article.panel)
+#ascii-star-decoration {
+  display: block !important;
+  position: fixed;
+  right: 3vw;
+  bottom: 4vh;
+  z-index: 5 !important;
+  opacity: 0.20;
+  pointer-events: none;
+}
+
+/* 필기 내용은 별보다 앞에 */
+#content-page {
+  position: relative;
+  z-index: 10;
+}
+
+/* 필기 패널 배경을 투명하게 */
+#content-page article.panel {
+  background: transparent;
+}
+
+/* 투명 PNG도 별 위에 표시 */
+#content-page .article-body img {
+  position: relative;
+  z-index: 11;
 }
