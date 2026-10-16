@@ -35,3 +35,21 @@
 .hero-arc {
   display: none;
 }
+/* 필기용 라운드 텍스트 박스 */
+.article-body .note-box {
+  background: #101820;
+  border: 1px solid #35465a;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  color: #c4e3fa;
+  line-height: 1.8;
+}
+
+.article-body .note-box > :first-child {
+  margin-top: 0;
+}
+
+.article-body .note-box > :last-child {
+  margin-bottom: 0;
+}
