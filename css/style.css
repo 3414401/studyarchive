@@ -43,7 +43,8 @@
   padding: 16px 20px;
   margin: 16px 0;
   color: #ffffff;
-  line-height: 1.8;
+  line-height: 1.2;
+  font-size: 12
 }
 
 .article-body .note-box > :first-child {
@@ -111,3 +112,9 @@
 .article-body .yellow { color: #ffd966; }
 .article-body .pink   { color: #ff91c8; }
 .article-body .green  { color: #80e5ad; }
+
+.article-body .note-box p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 4px 0;
+}
