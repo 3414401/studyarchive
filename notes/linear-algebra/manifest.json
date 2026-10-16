@@ -26,6 +26,15 @@
       "summary": "Markdown과 HTML을 함께 활용하는 방법",
       "file": "03-markdown-example.md",
       "format": "markdown"
+    },
+    {
+      "slug": "vector-spaces",
+      "title": "vector spaces",
+      "date": "2026-10-16",
+      "tags": [],
+      "summary": "",
+      "file": "vector spaces.html",
+      "format": "html"
     }
   ]
 }
