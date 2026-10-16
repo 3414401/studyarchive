@@ -323,3 +323,22 @@ body:has(#content-page:not([hidden]) article.panel)
 #ascii-star-decoration {
   color: #A8DFFF !important;
 }
+
+/* 홈 화면에서만 별을 아주 작게 */
+body:has(#home-page:not([hidden]))
+#ascii-star-decoration {
+  position: fixed !important;
+
+  top: 85px !important;
+  left: 30px !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  font-size: 6px !important;
+
+  transform: scale(0.20) !important;
+  transform-origin: top left !important;
+
+  opacity: 0.7;
+  pointer-events: none;
+}
