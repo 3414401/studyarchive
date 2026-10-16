@@ -49,6 +49,13 @@ Markdown 지원: 제목 `#`, 굵게 `**`, 기울임 `*`, 취소선 `~~`, 인라�
 
 `images/notes/` 폴더에 PNG/WebP/SVG를 업로드하고 HTML `<img>` 또는 Markdown `![설명](images/notes/파일명.png)`로 연결하세요.
 
+### 둥근 모서리
+index.html에서 원하는 글의 <template data-format="html"> 안에 다음처럼 작성하면 돼.
+<div class="note-box">
+  <h3>선형변환이란?</h3>
+  <p>선형변환은 벡터의 덧셈과 스칼라곱을 보존한다.</p>
+</div>
+
 ### 디자인 및 기능
 
 - `css/style.css`: 전체 디자인
