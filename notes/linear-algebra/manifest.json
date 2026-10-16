@@ -1,36 +1,28 @@
 {
   "posts": [
     {
+      "slug": "linear-combination",
+      "title": "01-3 Linear Combination",
+      "date": "2026-10-16",
+      "tags": [],
+      "summary": "선형결합",
+      "file": "01-3 linear combinatoin.html",
+      "format": "html"
+    },
+    {
       "slug": "matrix",
       "title": "01 Matrix Basics",
-      "date": "2026-10-14",
-      "tags": [
-        "matrix",
-        "행렬"
-      ],
+      "date": "2026-10-16",
+      "tags": [],
       "summary": "행렬과 선형변환의 기본 개념",
       "file": "01-matrix-basics.html",
       "format": "html"
     },
     {
-     {
-  "slug": "linear-combination",
-  "title": "01-3 Linear Combination",
-  "date": "2026-10-14",
-  "tags": ["linear algebra", "선형결합"],
-  "summary": "선형결합",
-  "file": "01-3 linear combinatoin.html",
-  "format": "html"
-}
-    },
-    {
       "slug": "markdown-example",
       "title": "Markdown 필기 예시",
-      "date": "2026-10-14",
-      "tags": [
-        "markdown",
-        "필기"
-      ],
+      "date": "2026-10-16",
+      "tags": [],
       "summary": "Markdown과 HTML을 함께 활용하는 방법",
       "file": "03-markdown-example.md",
       "format": "markdown"
