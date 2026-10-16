@@ -64,7 +64,13 @@ const nav = $('category-nav'), page = $('content-page'), home = $('home-page'), 
 let currentCat = null, history = [], historyIndex = 0;
 const open = hash => { location.hash = hash; if(location.hash === hash) render(); };
 function link(label,href,cls='') {return `<a class="${cls}" href="${href}">${esc(label)}</a>`;}
-function renderNav() {nav.innerHTML = data.map((c,i)=>`<a href="#/category/${c.id}" data-cat="${c.id}">[ ${String(i+1).padStart(2,'0')} ] ${esc(c.name)}</a>`).join('');}
+function renderNav() {
+  nav.innerHTML =
+    `<a href="#/" data-cat="home">[ 00 ] Home</a>` +
+    data.map((c, i) =>
+      `<a href="#/category/${c.id}" data-cat="${c.id}">[ ${String(i+1).padStart(2,'0')} ] ${esc(c.name)}</a>`
+    ).join('');
+}
 function render(){const [type,id,slug] = path();currentCat=data.find(c=>c.id===id)||null;const showHome=!type;home.hidden=!showHome;page.hidden=showHome;
 nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.dataset.cat===id));
 $('prompt').textContent='C:\\StudyArchive'+(currentCat?'\\'+currentCat.id:'')+'>';
