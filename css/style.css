@@ -190,3 +190,45 @@ article.panel > .intro,
 article.panel > .meta {
   display: none;
 }
+
+
+/* BEGIN STUDYARCHIVE ASCII STAR */
+#ascii-star-decoration {
+  display: none;
+  position: fixed;
+  right: 2.5vw;
+  bottom: 2vh;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  white-space: pre;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f4f4ff;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  font-size: clamp(3px, .53vw, 7px);
+  line-height: 1.15;
+  letter-spacing: 0;
+  font-weight: 400;
+  opacity: .70;
+}
+/* Show on home and note pages, but not category/search pages. */
+body:has(#home-page:not([hidden])) #ascii-star-decoration,
+body:has(#content-page:not([hidden]) article.panel) #ascii-star-decoration {
+  display: block;
+}
+body:has(#content-page:not([hidden]) article.panel) #ascii-star-decoration {
+  opacity: .15;
+  right: 3vw;
+  bottom: 4vh;
+}
+/* Non-interactive overlay; opacity keeps note text readable. */
+@media(max-width:650px) {
+  #ascii-star-decoration { font-size: 3px; right: 1vw; bottom: 2vh; opacity: .40; }
+  body:has(#content-page:not([hidden]) article.panel) #ascii-star-decoration { opacity: .10; }
+}
+/* END STUDYARCHIVE ASCII STAR */
