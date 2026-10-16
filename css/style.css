@@ -55,29 +55,32 @@
   margin-bottom: 0;
 }
 
-/* 필기용 표 */
+/* ChatGPT 스타일의 간결한 표 */
 .article-body .note-table {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 14px;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .article-body .note-table th,
 .article-body .note-table td {
-  border: 1px solid #35465a;
-  padding: 12px 16px;
+  border: none;
+  border-bottom: 1px solid #30363d;
+  padding: 7px 14px;
   text-align: left;
+  background: transparent;
 }
 
 .article-body .note-table th {
-  background: #14283a;
-  color: #8acaff;
+  color: #b0b8c4;
+  font-weight: 600;
 }
 
 .article-body .note-table td {
-  background: #101820;
-  color: #c4e3fa;
+  color: #ffffff;
 }
 
 /* 필기 본문 기본 스타일 */
@@ -117,4 +120,31 @@
   font-size: 12px;
   line-height: 1.4;
   margin: 4px 0;
+}
+
+/* 필기 전체 글자 크기 */
+.article-body {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #ffffff;
+}
+
+/* 일반 문단 */
+.panel .article-body p {
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 6px 0;
+  color: #ffffff;
+}
+
+/* 라운드 텍스트 박스 */
+.article-body .note-box,
+.article-body .note-box p {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* 표 */
+.article-body .note-table {
+  font-size: 13px;
 }
