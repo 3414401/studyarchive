@@ -104,6 +104,36 @@ index.html에서 원하는 글의 <template data-format="html"> 안에 다음처
   <p>선형변환은 벡터의 덧셈과 스칼라곱을 보존한다.</p>
 </div>
 ```
+
+### 표
+```
+<table class="note-table">
+  <thead>
+    <tr>
+      <th>변수 개수</th>
+      <th>전체 공간</th>
+      <th>Row 한개</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2개</td>
+      <td>ℝ<sup>2</sup></td>
+      <td>1차원 직선</td>
+    </tr>
+   <tr>
+      <td>3개</td>
+      <td>ℝ<sup>3</sup></td>
+      <td>2차원 평면</td>
+    </tr>
+     <tr>
+      <td>6개</td>
+      <td>ℝ<sup>6</sup></td>
+      <td>5차원 초평면</td>
+    </tr>
+  </tbody>
+</table>
+```
 ### 디자인 및 기능
 
 - `css/style.css`: 전체 디자인
