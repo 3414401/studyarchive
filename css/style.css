@@ -339,6 +339,29 @@ body:has(#home-page:not([hidden]))
   transform: scale(0.20) !important;
   transform-origin: top left !important;
 
+  
+/* 선형대수 행렬 */
+.article-body .matrix {
+  display: inline-block;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  padding: 4px 10px;
+  margin: 10px 0;
+}
+
+.article-body .matrix table {
+  border-collapse: collapse;
+  width: auto;
+}
+
+.article-body .matrix td {
+  border: none !important;
+  background: transparent !important;
+  padding: 5px 12px;
+  text-align: center;
+  color: white;
+}
+
   opacity: 0.7;
   pointer-events: none;
 }
