@@ -18,16 +18,10 @@
 <div class="matrix">
   <table>
     <tr>
-      <td>a</td><td>b</td><td>c</td>
-      <td>d</td><td>e</td><td>f</td>
+      <td>3</td>
     </tr>
     <tr>
-      <td>g</td><td>h</td><td>i</td>
-      <td>j</td><td>k</td><td>l</td>
-    </tr>
-    <tr>
-      <td>m</td><td>n</td><td>o</td>
-      <td>p</td><td>q</td><td>r</td>
+      <td>0</td>
     </tr>
   </table>
 </div>
