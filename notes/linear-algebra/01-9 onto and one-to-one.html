@@ -11,7 +11,7 @@
   <h3><span class="pink">One-to-One 단사</span></h3>
   <p>유일한가?(Uniqueness): 각 결과값에 도달하는 경로는 단 하나뿐인가?</p>
   <p>A mapping T: ℝ<sup>n</sup> -> ℝ<sup>m</sup> is said to be <span class="yellow">one-to-one</span> if each <strong>b</strong> in ℝ<sup>m</sup> is the image of at <strong>most</strong> one x in ℝ<sup>n</sup>. </p>
-  <p>✔️검사법: free variable 이 존재하지 않는다.</p>
+  <p>✔️검사법: free variable 이 존재하지 않는다. <span class="pink">[A 0]말고 그냥 [A]! 그냥 [A]의 열들이 선형독립인지 봐야함.</span></p>
 </div>
 <br>
 <br>
@@ -37,15 +37,36 @@
   By Therem 4 in Section1.4, for each b in  ℝ<sup>3</sup>, the equation Ax=b is <strong>consistent.</strong> In other words, the linear transformation T maps ℝ<sup>4</sup>(its domain) onto ℝ<sup>3</sup>. However, since the equation Ax=b has a free variable(because there are 4 variables and only 3 basic variables), each b is the image of more than one x. That is, T is not one-to-one.</p>
 
 <div class="note-box">
-  <h2>🔖Theorem 4</h2>
+  <h2>🔖<span class="pink">Theorem 4</span></h2>
   <p>Let A be an m×n matrix. Then the following statements are logically equivalent. That is, for a particular A, either they are all true statements or they are all false.</p>
   <p>a. For each b in ℝ<sup>m</sup>, the equation Ax=b has a solution.</p>
   <p>b. Each b in ℝ<sup>m</sup> is a linear combination of the columns of A.</p>
   <p>c. The columns of A span ℝ<sup>m</sup>.</p>
   <p>⭐d. A has a pivot position in every row.</p>
 </div>
-<br>
 <div class="note-box">
   <h2>🔖Theorem 11</h2>
   <p>Let T:  ℝ<sup>n</sup> ->  ℝ<sup>m</sup> be a linear transformation. Then T is one-to-one <strong>if and only if</strong> the equation T(x)=0 has only the trivial solution.</p>
 </div>
+<div class="note-box">
+  <h2>🔖Theorem 12</h2>
+  <p>Let T:  ℝ<sup>n</sup> ->  ℝ<sup>m</sup> be a linear transformation, and let A be the standard matrix for T. Then:</p>
+  <p>a. T maps ℝ<sup>n</sup> <span class="yellow">onto</span> ℝ<sup>m</sup> <strong>if and only</strong> the columns of A span ℝ<sup>m</sup>.</p>
+  <p>b. T is <span class="yellow">one-to-one</span><strong>if and only if</strong> ⭐the columns of A are linearly independent.⭐</p>
+</div>
+<br>
+<div class="matrix">
+  <table>
+    <tr>
+      <td>1</td><td>-4</td>
+    </tr>
+    <tr>
+      <td>0</td><td>2</td>
+    </tr>
+    <tr>
+      <td>0</td><td>0</td>
+    </tr>
+  </table>
+</div>
+<p>2개의 열이 선형 독립 -> One-to-one</p>
+<p>⭐3차원을 덮기엔 열이 부족 -> Span 불가 (Onto X)⭐</p>
