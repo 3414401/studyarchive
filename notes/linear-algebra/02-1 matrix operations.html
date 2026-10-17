@@ -1,0 +1,58 @@
+<h2>Matrix Operations(행렬 연산)</h2>
+<p><strong>기본 연산: 덧셈, 곱, 거듭제곱</strong></p>
+<p>용어 정리</p>
+<table class="note-table">
+  <thead>
+    <tr>
+      <th>영어</th>
+      <th>한국어</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>diagonal entries</td>
+      <td>대각 성분</td>
+      <td>a11, a22, a33, ...</td>
+    </tr>
+   <tr>
+      <td>diagnol matrix</td>
+      <td>대각 행렬</td>
+      <td>비대각 성분이 모두 0인 정사각행렬</td>
+    </tr>
+     <tr>
+      <td>zero matrix</td>
+      <td>0행렬</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<p><span class="yellow">덧셈</span>: 교환✅, 결합✅, 분배✅ but size 다르면 ㅂㄱ</p>
+<p><span class="yellow">곱셈</span>: 교환❌, 결합✅, 분배✅ 항등원은 AIm=InA=A</p>
+<div class="note-box">
+<p>영어로 교환=commutative 결합=associative 분배=distribute <strong>소거법칙=cancellation laws(성립x)</strong></p>
+<p>소거법칙 성립 안해서 AB=0이라고 A or B=0이라고 할 수 없음. </p>
+<p><span class="yellow">곱셈</span>: 함수의 합성과 같음.</p>
+<p>---> ABx=(AB)x=A(Bx)</p>
+<br>
+  <h3>A, B 둘 다 행렬일때</h3>
+  <p>AB=A[b1 b2 b3 ... bn]=[Ab1 Ab2 Ab3 ... Abn]</p>
+</div>
+<p><span class="yellow">거듭제곱(product of k copies of A)</span></p>
+<div class="note-box">
+<p>A<sup>0</sup>x=x. 즉, A<sup>0</sup>는 항등원 I로 취급된다.</p>
+</div>
+<p><span class="yellow">전치(Transpose)</span></p>
+<div class="note-box">
+<p>행 기준으로 한줄한줄 다 열로 바꿔주면 됨.</p>
+<p>행은 열로, 열은 행으로</p>
+<p>주대각선을 축으로 거울처럼 뒤집기.</p>
+</div>
+<br>
+<p>🔖Theorem 3</p>
+<p>Let A and B denote matrices whose sizes are appropriate for the following sums and products.</p>
+<p>a. (A<sup>T</sup>)<sup>T</sup>=A</p>
+<p>b. (A+b)<sup>T</sup>=A<sup>T</sup>+B<sup>T</sup></p>
+<p>c. For any scalar r, (rA)<sup>T</sup>=rA<sup>T</sup></p>
+<p>d. (AB)<sup>T</sup>=B<sup>T</sup>A<sup>T</sup></p>
