@@ -9,9 +9,9 @@
 4. Commit changes를 누른다.
 그러면 GitHub Actions가 실행되어 필기 목록을 자동 갱신하도록 설정된 거야. manifest.json을 직접 수정할 필요 없어.
 
-a b c d e f
-g h i j k l
-m n o p q r
+//a b c d e f//
+//g h i j k l//
+//m n o p q r//
 
 
 ```
