@@ -324,44 +324,67 @@ body:has(#content-page:not([hidden]) article.panel)
   color: #A8DFFF !important;
 }
 
+
 /* 홈 화면에서만 별을 아주 작게 */
 body:has(#home-page:not([hidden]))
 #ascii-star-decoration {
   position: fixed !important;
-
   top: 85px !important;
   left: 30px !important;
   right: auto !important;
   bottom: auto !important;
 
   font-size: 6px !important;
-
   transform: scale(0.20) !important;
   transform-origin: top left !important;
 
-  
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 /* 선형대수 행렬 */
 .article-body .matrix {
   display: inline-block;
+  vertical-align: middle;
   border-left: 2px solid white;
   border-right: 2px solid white;
   padding: 4px 10px;
-  margin: 10px 0;
+  margin: 4px 6px;
+  position: relative;
 }
+
+/* 대괄호의 위아래 가로선 */
+.article-body .matrix::before,
+.article-body .matrix::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background:
+    linear-gradient(white, white) left / 8px 2px no-repeat,
+    linear-gradient(white, white) right / 8px 2px no-repeat;
+}
+
+.article-body .matrix::before { top: 0; }
+.article-body .matrix::after { bottom: 0; }
 
 .article-body .matrix table {
-  border-collapse: collapse;
   width: auto;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+  background: transparent;
 }
 
+.article-body .matrix tr,
 .article-body .matrix td {
   border: none !important;
   background: transparent !important;
+}
+
+.article-body .matrix td {
   padding: 5px 12px;
   text-align: center;
   color: white;
-}
-
-  opacity: 0.7;
-  pointer-events: none;
 }
