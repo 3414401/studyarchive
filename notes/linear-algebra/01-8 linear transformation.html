@@ -1,21 +1,75 @@
 <h2>Linear Transformation (선형 변환)</h2>
+<div>
+<p>Linear Transformation (선형변환)</p>
+  <div class="note-box">
+    <p>🔖properties 2가지(암기)</p>
+    <p><span class="yellow">1️⃣ 가산성: T(u+v)=T(u)+T(v)</span></p>
+    <p> - 두 벡터를 먼저 더하고 변환한 거나, 각각 변환 후 더한거나 같다.</p>
+    <p><span class="yellow">2️⃣ 스칼라곱: cT(u)=T(cu)</span></p>
+    <p>또한, 모든 행렬 곱은 선형 변환이다. 곱을 그렇게 정의했기 때문!</p>
+    <p>참고로 역도 성립함ㄷㄷ 모든 유한차원 실수벡터공간 사이의 선형변환은 기저를 정하면 행렬곱으로 표현할 수 있다.</p>
+    <p><span class="yellow">1️⃣+2️⃣ 중첩의 원리: T(C1v1 + ... cpvp)) = c1T(v1) + c2T(v2) + ... + cpT(vp)</span></p>
+  </div>
+</div>
+
+
 <p>Ax=b</p>
 <div class="note-box">
   <p><strong>Ax=b</strong></p>
   <p>방정식이 아니라,</p>
   <p><strong>행렬 A를 벡터 x에 A라는 행위를 하는 object로 보자. (혹은 함수)</strong></p>
-  <p><strong>행렬 A가 m×n행렬이라면 n차원 → m차원으로 보내는 선형 변환임.</strong></p>
+  <p><strong>행렬 A가 m×n행렬이라면 ℝ<sup>n</sup> → ℝ<sup>m</sup>으로 보내는 선형 변환임.</strong></p>
   <p>행렬 A가 m×n, x는 n×p --> b는 m×p니까</p>
-  <p>A=T(x)로 보면, domain은 n, Codomain은 m, Range는 set of all images T(x)이다.</p>
 </div>
 
 <div class="note-box">
-  <p><strong>Ax⟼b</strong></p>
-  <p>방정식이 아니라,</p>
-  <p><strong>행렬 A를 벡터 x에 A라는 행위를 하는 object로 보자. (혹은 함수)</strong></p>
-  <p><strong>행렬 A가 m×n행렬이라면 n차원 → m차원으로 보내는 선형 변환임.</strong></p>
-  <p>행렬 A가 m×n, x는 n×p --> b는 m×p니까</p>
+  <p><strong>x⟼Ax</strong></p>
   <p>A=T(x)로 보면, domain은 n, Codomain은 m, Range는 set of all images T(x)이다.</p>
+  <p>🌍Find an x in ℝ<sup>2</sup> whose image under T is b. <-T에 의한 상이 b가 되는 ℝ<sup>2</sup> x를 구하라는 뜻(영어 so hard) </p>
+</div>
+<div class="note-box">
+  <p></p>
+</div>
+
+<h2>선형 변환 종류들</h2>
+<p>다 선형변환이고 용어 암기해야 함.</p>
+<p>원점 중심으로 누르든 돌리든 곡선x 원점이동x라면 선형변환임</p>
+  <table class="note-table">
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="yellow">Projection(투영)</span></td>
+      <td> </td>
+      <td>1차원 직선</td>
+    </tr>
+   <tr>
+      <td><span class="yellow">Shear(전단)</span></td>
+      <td>ℝ<sup>3</sup></td>
+      <td>2차원 평면</td>
+    </tr>
+     <tr>
+      <td><span class="yellow">Dilation(확대), Contraction(축소)</span></td>
+      <td>ℝ<sup>6</sup></td>
+      <td>5차원 초평면</td>
+    </tr>
+         <tr>
+      <td><span class="yellow">Rotation(회전)</span></td>
+      <td>ℝ<sup>6</sup></td>
+      <td>5차원 초평면</td>
+    </tr>
+  </tbody>
+</table>
+<div class="note-box">
+  <p><strong>x⟼Ax</strong></p>
+  <p>A=T(x)로 보면, domain은 n, Codomain은 m, Range는 set of all images T(x)이다.</p>
+  <p>🌍Find an x in R^2 whose image under T is b. <-T에 의한 상이 b가 되는 2차원 x를 구하라는 뜻(영어 so hard) </p>
 </div>
 <div class="note-box">
   <p></p>
