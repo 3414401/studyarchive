@@ -27,45 +27,65 @@
   <p>A=T(x)로 보면, domain은 n, Codomain은 m, Range는 set of all images T(x)이다.</p>
   <p>🌍Find an x in ℝ<sup>2</sup> whose image under T is b. <-T에 의한 상이 b가 되는 ℝ<sup>2</sup> x를 구하라는 뜻(영어 so hard) </p>
 </div>
+<p></p>
+<p>Ax=b에서 A찾기</p>
 <div class="note-box">
-  <p></p>
+  <p>복잡한 공간 전체 계산할 필요 없음. 항등행렬 In의 열벡터 e1, e2, ..., en이 어디로 이동하는지만 추적하면 된다.</p>
+  <p>A의 j열은 단위행렬의 j열의 선형변환결과</p>
 </div>
 
 <h2>선형 변환 종류들</h2>
 <p>다 선형변환이고 용어 암기해야 함.</p>
 <p>원점 중심으로 누르든 돌리든 곡선x 원점이동x라면 선형변환임</p>
-  <table class="note-table">
-  <thead>
+<p>4종:<span class="yellow">Projection(투영), Shear(전단), Dilation(확대) 및 Contraction(축소), Rotation(회전)</span> </p>
+<p>  </p>
+<p><span class="yellow">Projection(투영)</span></p>
+<div class="note-box">
+  <p><strong>x⟼Ax</strong></p>
+  <p>A=T(x)로 보면, domain은 n, Codomain은 m, Range는 set of all images T(x)이다.</p>
+  <p>🌍Find an x in R^2 whose image under T is b. <-T에 의한 상이 b가 되는 2차원 x를 구하라는 뜻(영어 so hard) </p>
+</div>
+
+<p>  </p>
+<p><span class="yellow">Dilation(확대)</span></p>
+<div class="note-box">
+  <p>Example2. Find the <strong>standard(없어도 되는 단어)</strong> matrix A for dilation trasformation T(x)=3x, for x in  ℝ<sup>2</sup></p>
+  <p>Solution:</p>
+  <p>T(e1)=3e1=<div class="matrix">
+  <table>
     <tr>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
+      <td>3</td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
-      <td><span class="yellow">Projection(투영)</span></td>
-      <td> </td>
-      <td>1차원 직선</td>
+      <td>0</td>
     </tr>
-   <tr>
-      <td><span class="yellow">Shear(전단)</span></td>
-      <td>ℝ<sup>3</sup></td>
-      <td>2차원 평면</td>
+  </table>
+</div> and T(e2)=3e2=<div class="matrix">
+  <table>
+    <tr>
+      <td>0</td>
     </tr>
-     <tr>
-      <td><span class="yellow">Dilation(확대), Contraction(축소)</span></td>
-      <td>ℝ<sup>6</sup></td>
-      <td>5차원 초평면</td>
+    <tr>
+      <td>3</td>
     </tr>
-         <tr>
-      <td><span class="yellow">Rotation(회전)</span></td>
-      <td>ℝ<sup>6</sup></td>
-      <td>5차원 초평면</td>
+  </table>
+</div></p>
+  <p>so, A=<div class="matrix">
+  <table>
+    <tr>
+      <td>3 0</td>
     </tr>
-  </tbody>
-</table>
+    <tr>
+      <td>0 3</td>
+    </tr>
+  </table>
+</div></p>
+  <p>🌍Find an x in R^2 whose image under T is b. <-T에 의한 상이 b가 되는 2차원 x를 구하라는 뜻(영어 so hard) </p>
+</div>
+
+
+
+
 <div class="note-box">
   <p><strong>x⟼Ax</strong></p>
   <p>A=T(x)로 보면, domain은 n, Codomain은 m, Range는 set of all images T(x)이다.</p>
