@@ -100,8 +100,13 @@
 Markdown 지원: 제목 `#`, 굵게 `**`, 기울임 `*`, 취소선 `~~`, 인라인 코드, 코드 블록, 목록, 링크, 이미지, 인용문, 가로선. 복잡한 표/수식 전용 문법은 기본 지원하지 않습니다. HTML을 직접 써서 확장할 수 있습니다.
 
 ### 필기 이미지
-
-`images/notes/` 폴더에 PNG/WebP/SVG를 업로드하고 HTML `<img>` 또는 Markdown `![설명](images/notes/파일명.png)`로 연결하세요.
+```
+<img
+  src="/studyarchive/notes/linear-algebra/01-3-1-transparent.png"
+  alt="선형대수 선형결합 필기"
+  style="display:block; width:100%; height:auto; background:transparent;"
+>
+```
 
 ### 둥근 모서리
 ```
