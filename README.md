@@ -40,8 +40,15 @@
 </div>
 
 ```
-## 가장 중요한 파일: `index.html`
 
+## 분수식
+```
+<span class="fraction">
+  <span class="numerator">a+b</span>
+  <span class="denominator">c+d</span>
+</span>
+## 가장 중요한 파일: `index.html`
+```
 `index.html`의 아래쪽에서 `id="archive-content"`를 검색하세요.
 
 - **과목명 변경**: `<section class="archive-category" ... data-name="LINEAR ALGEBRA" ...>`의 `data-name` 수정
