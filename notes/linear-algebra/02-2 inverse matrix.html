@@ -1,4 +1,40 @@
 <h2>Inverse Matrix</h2>
 <p>역행렬의 정의: n×n 행렬 A에 대해 곱했을 때 단위 행렬 I가 나오는 <strong>유일한</strong>행렬 A<sup>-1</sup>를 의미</p>
-
-<p>Ax=I의 해를 구하기 위해 [A I]를 푼다. 이때 행 축약을 통해 [I B]꼴로 바꾸면 x=B가 되므로 </p>
+<p><strong>SOLUTION</strong></p>
+<p>1️⃣ Ax=I의 해를 구하기 위해 [A I]를 푼다. 이때 행 축약을 통해 [I B]꼴로 바꾸면 x=B가 된다. </p>
+<p>2️⃣ det(A<sup>-1</sup>)=<span class="fraction">
+  <span class="numerator">1</span>
+  <span class="denominator">det(A)</span>
+</span>
+  <p>이때, 
+• \(\det(A) \neq 0\)인 경우: 역행렬 A⁻¹이 존재하며, 이를 <span class="yellow">가역행렬(Invertible matrix)</span> 또는 정칙행렬이라고 부릅니다.
+• \(\det(A) = 0\)인 경우: 역행렬이 존재하지 않으며, 이를 <span class="yellow">특이행렬(Singular matrix)</span>이라고 부릅니다.
+<br>
+<div class="note-box">
+  <h3><span class="yellow">determinent of A (det(A))</span></h3>
+  <h3><strong>역행렬의 존재성 여부로만 활용하고, 역행렬 실제로 구할때는 [A I]를 푼다. 단, 2×2는 외울만함.</strong></h3>
+  <p>2×2 행렬일 때:</p>
+  <p>det(A)=<div class="matrix">
+  <table>
+    <tr>
+      <td>a</td><td>b</td>
+    </tr>
+    <tr>
+      <td>c</td><td>d</td>
+    </tr>
+  </table>
+</div>이므로 A<sup>-1</sup>=<span class="fraction">
+  <span class="numerator">1</span>
+  <span class="denominator">det(A)</span>
+</span>×<div class="matrix">
+  <table>
+    <tr>
+      <td>d</td><td>-b</td>
+    </tr>
+    <tr>
+      <td>-c</td><td>a</td>
+    </tr>
+  </table>
+</div></p>
+  <p>* b, c 위치는 자리 안바꾸고 -만 붙인다.</p>
+</div>
