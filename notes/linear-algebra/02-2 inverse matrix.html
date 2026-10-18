@@ -7,12 +7,12 @@
   <span class="denominator">det(A)</span>
 </span>
   <p>이때, 
-• \(\det(A) \neq 0\)인 경우: 역행렬 A⁻¹이 존재하며, 이를 <span class="yellow">가역행렬(Invertible matrix)</span> 또는 정칙행렬이라고 부릅니다.
-• \(\det(A) = 0\)인 경우: 역행렬이 존재하지 않으며, 이를 <span class="yellow">특이행렬(Singular matrix)</span>이라고 부릅니다.
+<p>det(A) = 0 인 경우: 역행렬 A⁻¹이 존재하며, 이를 <span class="yellow">가역행렬(Invertible matrix)</span> 또는 정칙행렬이라고 부릅니다.</p>
+<p>det(A) ≠ 0인 경우: 역행렬이 존재하지 않으며, 이를 <span class="yellow">특이행렬(Singular matrix)</span>이라고 부릅니다.</p>
 <br>
-<div class="note-box">
-  <h3><span class="yellow">determinent of A (det(A))</span></h3>
+<h3><span class="yellow">determinent of A (det(A))</span></h3>
   <h3><strong>역행렬의 존재성 여부로만 활용하고, 역행렬 실제로 구할때는 [A I]를 푼다. 단, 2×2는 외울만함.</strong></h3>
+<div class="note-box">
   <p>2×2 행렬일 때:</p>
   <p>det(A)=<div class="matrix">
   <table>
@@ -37,6 +37,8 @@
   </table>
 </div></p>
   <p>* b, c 위치는 자리 안바꾸고 -만 붙인다.</p>
+</div>
+<div class="note-box">
   <p>3×3이상에서 det(A)구하는 방법</p>
   <img
   src="/studyarchive/notes/linear-algebra/02-2 1.png"
@@ -44,3 +46,8 @@
   style="display:block; width:100%; height:auto; background:transparent;"
 >
 </div>
+<br>
+<div class="note-box">
+  <h2>🔖Theorem 5</h2>
+  <p>If A is an <span class="yellow">invertible n×n matirx</span>, then for each b in R<sup>n</sup>, the equation Ax=b has the <span class="yellow">unique solution x=A<sup>-1</sup>b</span></p>
+<p>증명: A<sup>-1</sup>x=b --> AA<sup>-1</sup>b=Ax --> b=Ax??</p>
