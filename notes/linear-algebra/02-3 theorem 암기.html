@@ -47,5 +47,58 @@
   </ul>
 
   <p>✔️ n×n 행렬에서는 <span class="pink">가역 ⇔ 단사 ⇔ 전사 ⇔ 전단사</span>가 성립한다.</p>
+    <br>
+    <p>Let A and B be square matrices. If AB=I, then A and B are both invertible, wiht B=A<sup>-1</sup> and A=B<sup>-1</sup>.</p>
+    <br>
+    <p>증명(하나도 안중요한데 걍 궁금해서 찾아봄)</p>
+    <div class="note-box">
+  <h3><span class="pink">Theorem: AB = I이면 BA = I</span></h3>
+
+  <p>Let A and B be square matrices. If AB = I, then A and B are both invertible, with B = A<sup>-1</sup> and A = B<sup>-1</sup>.</p>
+
+  <p>✔️ A, B가 같은 크기의 n×n 정사각행렬이고 AB = I라면, 두 행렬은 서로의 역행렬이다.</p>
+
+  <h4><span class="yellow">① A가 가역행렬임을 증명</span></h4>
+
+  <p>AB = I이므로, B의 열벡터를 b<sub>1</sub>, ..., b<sub>n</sub>이라 하면</p>
+
+  <p>AB = [Ab<sub>1</sub> &nbsp; Ab<sub>2</sub> &nbsp; ... &nbsp; Ab<sub>n</sub>] = I</p>
+
+  <p>따라서 Ab<sub>1</sub> = e<sub>1</sub>, ..., Ab<sub>n</sub> = e<sub>n</sub>이다.</p>
+
+  <p>즉, 단위행렬의 모든 열벡터를 A의 열벡터들의 선형결합으로 표현할 수 있다.</p>
+
+  <p>단위행렬의 열벡터들은 ℝ<sup>n</sup>을 생성하므로, A의 열벡터들도 ℝ<sup>n</sup>을 생성한다.</p>
+
+  <p>따라서 A는 <span class="yellow">전사(Onto)</span>이다.</p>
+
+  <p>✔️ A는 n×n 정사각행렬이므로, 전사 ⇔ 가역이다.</p>
+
+  <p>∴ <span class="pink">A는 가역행렬이다.</span></p>
+
+  <h4><span class="yellow">② B = A<sup>-1</sup>임을 증명</span></h4>
+
+  <p>A가 가역행렬이므로 A<sup>-1</sup>이 존재한다.</p>
+
+  <p>AB = I의 양변 왼쪽에 A<sup>-1</sup>을 곱하면,</p>
+
+  <p>A<sup>-1</sup>AB = A<sup>-1</sup>I</p>
+  <p>(A<sup>-1</sup>A)B = A<sup>-1</sup></p>
+  <p>IB = A<sup>-1</sup></p>
+
+  <p>∴ <span class="pink">B = A<sup>-1</sup></span></p>
+
+  <h4><span class="yellow">③ BA = I임을 증명</span></h4>
+
+  <p>B = A<sup>-1</sup>이므로,</p>
+
+  <p>BA = A<sup>-1</sup>A = I</p>
+
+  <p>따라서 B도 가역행렬이며, A = B<sup>-1</sup>이다.</p>
+
+  <p>∴ <span class="pink">AB = I ⇔ BA = I</span></p>
+
+  <p>✔️ <span class="yellow">결론:</span> 같은 크기의 정사각행렬에서는 오른쪽 역행렬이 존재하면 왼쪽 역행렬도 반드시 존재한다.</p>
+</div>
 </div>
 </div>
