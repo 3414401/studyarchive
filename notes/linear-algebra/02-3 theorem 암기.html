@@ -1,0 +1,51 @@
+<h2>어휴 진짜 외워오라는데 외우기가 싫다</h2>
+<div class="note-box">
+  <h3>Theorem 8</h3>
+  <p>Let A be an square n×n matrix. Then the following statements are equivalent. That is, for given A, the statements are either all true or all false.</p>
+  <p>a. A is an invertible matrix.</p>
+  <p>b. A is row equivalent to the n×n matrix.(행 축약 하고나면 단위행렬이 된다 ㄷㄷ)</p>
+  <p>c. A has n pivot positions.(그렇겟지 onto니까)</p>
+  <p>d. The equation Ax=0 has only the trivial solution. (그렇겟지 one-to-one이니까)</p>
+  <p>e. The columns of A form a linearly independent set. (⭐그렇겟지 one-to-one이니까⭐)</p>
+  <p>f. The linear transformation x↦Ax is one-to-one. (그렇겟지 자유변수가 없으니까)</p>
+  <p>g. The equation Ax=b has at least one solution for each b in R<sup>n</sup>.(그렇겟지 onto니까)</p>
+  <p>h. The columns of A span R<sup>n</sup>.</p>
+  <p>i. The linear transformaiton x↦Ax maps R<sup>n</sup> onto R<sup>n</sup>.</p>
+  <p>j. There is an n×n matrix C such that CA=I.(역행렬의 정의)</p>
+  <p>k. There is an n×n matrix D such that AD=I. (역행렬의 정의)</p>
+  <p>l. A<sup>T</sup>is an invertible matrix.</p>
+  <br>
+  <div class="note-box">
+  <h3><span class="pink">Invertible Matrix Theorem</span></h3>
+
+  <p><strong>a.</strong> A는 n×n 가역행렬이다.</p>
+  <p>다음 명제들은 모두 동치이다.</p>
+
+  <h4><span class="yellow">① 단사 (One-to-One)</span></h4>
+  <ul>
+    <li><strong>d.</strong> Ax = 0은 자명해만 가진다.</li>
+    <li><strong>e.</strong> A의 열벡터들이 선형독립이다.</li>
+    <li><strong>f.</strong> 선형변환 x ↦ Ax는 단사이다.</li>
+  </ul>
+  <p>✔️ 자유변수가 없으며, <span class="yellow">모든 열에 피벗</span>이 존재한다.</p>
+
+  <h4><span class="yellow">② 전사 (Onto)</span></h4>
+  <ul>
+    <li><strong>g.</strong> 모든 b ∈ ℝ<sup>n</sup>에 대해 Ax = b의 해가 존재한다.</li>
+    <li><strong>h.</strong> A의 열벡터들이 ℝ<sup>n</sup>을 생성한다.</li>
+    <li><strong>i.</strong> 선형변환 x ↦ Ax는 ℝ<sup>n</sup>에서 ℝ<sup>n</sup>으로의 전사이다.</li>
+  </ul>
+  <p>✔️ <span class="yellow">모든 행에 피벗</span>이 존재한다.</p>
+
+  <h4><span class="yellow">③ 행렬 구조와 역행렬 조건</span></h4>
+  <ul>
+    <li><strong>b.</strong> A는 단위행렬 I<sub>n</sub>과 행 동치이다.</li>
+    <li><strong>c.</strong> A는 n개의 피벗 위치를 가진다.</li>
+    <li><strong>j.</strong> CA = I를 만족하는 n×n 행렬 C가 존재한다.</li>
+    <li><strong>k.</strong> AD = I를 만족하는 n×n 행렬 D가 존재한다.</li>
+    <li><strong>l.</strong> A<sup>T</sup>도 가역행렬이다.</li>
+  </ul>
+
+  <p>✔️ n×n 행렬에서는 <span class="pink">가역 ⇔ 단사 ⇔ 전사 ⇔ 전단사</span>가 성립한다.</p>
+</div>
+</div>
