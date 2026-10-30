@@ -20,6 +20,15 @@
       "summary": "",
       "file": "1-1 KNeighborsClassifier().md",
       "format": "markdown"
+    },
+    {
+      "slug": "3-kneighborsregressor",
+      "title": "3. KNeighborsRegressor()",
+      "date": "2026-10-30",
+      "tags": [],
+      "summary": "",
+      "file": "3. KNeighborsRegressor().md",
+      "format": "markdown"
     }
   ]
 }
