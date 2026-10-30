@@ -11,6 +11,15 @@
       "summary": "K-최근접 이웃 알고리즘",
       "file": "01-k-nearest-neighbors.html",
       "format": "html"
+    },
+    {
+      "slug": "1-1-kneighborsclassifier",
+      "title": "1-1 KNeighborsClassifier()",
+      "date": "2026-10-30",
+      "tags": [],
+      "summary": "",
+      "file": "1-1 KNeighborsClassifier().md",
+      "format": "markdown"
     }
   ]
 }
